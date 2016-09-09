@@ -1,10 +1,12 @@
 import { connect } from 'react-redux'
+import valuesIn from 'lodash/valuesIn'
+import assign from 'lodash/assign'
 import updateAction from '../actions/updateAction'
 import Button from '../components/Button'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    combinedClassName: ['button', ownProps.className].join(' ')
+    combinedClassName: ['button', ownProps.className].join(' '),
   }
 }
 
@@ -17,6 +19,11 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     )
   }
 })
+
+function allErrors(formAttributes) {
+  if (!formAttributes || !formAttributes.errors) return []
+  return assign(...valuesIn(formAttributes.errors))
+}
 
 export default connect(
   mapStateToProps,

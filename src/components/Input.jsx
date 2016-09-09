@@ -10,9 +10,10 @@ export default class Input extends Component {
     model: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     formId: PropTypes.string.isRequired,
-    formObject: PropTypes.object.isRequired,
+    // formObject: PropTypes.object.isRequired,
     value: PropTypes.oneOfType([
       PropTypes.string,
+      PropTypes.number,
       PropTypes.bool,
       // PropTypes.arrayOf(PropTypes.number),
     ]).isRequired,

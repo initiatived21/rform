@@ -7,10 +7,10 @@ const mapStateToProps = function(state, ownProps) {
   return {
     htmlFor:
       ownProps.htmlFor ||
-      getId(ownProps.model, ownProps.submodel, ownProps.attribute),
-    content: ownProps.content || ownProps.children ||
-      optionalTranslation(ownProps.model, ownProps.submodel, ownProps.attribute, 'label') ||
-      ''
+      getId(ownProps.formId, ownProps.model, ownProps.submodel, ownProps.attribute),
+      content: ownProps.content || ownProps.children || optionalTranslation(
+        'rform', ownProps.model, ownProps.submodel, ownProps.attribute, 'label'
+      ) || ''
   }
 }
 
