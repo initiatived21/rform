@@ -5,7 +5,7 @@ export const initialState = {
   isSubmitting: {}
 }
 
-export default function reducer(state = initialAjaxSubmissionState, action) {
+export default function reducer(state = initialState, action) {
   const { type } = action
   let newState = assign({}, state)
 

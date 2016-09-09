@@ -14,7 +14,7 @@ const mapStateToProps = (state, ownProps) => {
     ownProps.formObjectClass ||
     defaultFormObject(ownProps.model, ownProps.children)
   const formId = ownProps.id || formObjectClass.name
-  const editedStateObject = state[formId]
+  const editedStateObject = state.forms[formId]
 
   const enctype = ownProps.multipart
     ? 'multipart/form-data'
